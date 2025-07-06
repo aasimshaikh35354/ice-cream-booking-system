@@ -1,0 +1,74 @@
+import React, { forwardRef } from "react";
+
+const Invoice = forwardRef(({ selectedOrder }, ref) => {
+    if (!selectedOrder) return null;
+
+    const userName = localStorage.getItem("userName")
+
+    return (
+        <div
+            ref={ref}
+            style={{
+                position: "absolute",
+                left: "-9999px",
+                background: "white",
+                padding: "20px",
+                width: "210mm",
+                minHeight: "297mm",
+                boxSizing: "border-box",
+            }}
+        >
+            <h2 style={{ textAlign: "center", marginBottom: "20px" }}>Invoice</h2>
+            <div style={{ marginTop: '50px' }}>
+                <p><strong>Payment By</strong>: {userName}</p>
+            </div>
+            <div style={{ display: "flex", alignItems: "start", justifyContent: "space-between" }}>
+                <div>
+                    <h2>Order Details</h2>
+                    <p><strong>Order ID:</strong> {selectedOrder._id}</p>
+                    <p><strong>Transaction ID:</strong> {selectedOrder.transactionId}</p>
+                    <p><strong>Status:</strong> {selectedOrder.status}</p>
+                    <p><strong>Date:</strong> {new Date(selectedOrder.createdAt).toLocaleDateString()}</p>
+                </div>
+
+                <div>
+                    <h2>Delivery Partner </h2>
+                    <p><strong>Delivery Boy:</strong> {selectedOrder.deliveryBoy.name}</p>
+                    <p><strong>Phone No:</strong> {selectedOrder.deliveryBoy.phone}</p>
+                </div>
+
+                <div>
+                    <h2>Address</h2>
+                    <p><b>Phone:</b> {selectedOrder.address.phone}</p>
+                    <p><b>Street:</b> {selectedOrder.address.street}</p>
+                    <p><b>City:</b> {selectedOrder.address.city}</p>
+                    <p><b>Pin code:</b> {selectedOrder.address.pincode}</p>
+                </div>
+            </div>
+
+            <h3 style={{ marginTop: '50px' }}>Products</h3>
+            <table style={{ width: "100%", borderCollapse: "collapse" }}>
+                <thead>
+                    <tr style={{ background: "#ddd" }}>
+                        <th style={{ border: "1px solid black", padding: "5px" }}>Name</th>
+                        <th style={{ border: "1px solid black", padding: "5px" }}>Price</th>
+                        <th style={{ border: "1px solid black", padding: "5px" }}>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {selectedOrder.products.map((product) => (
+                        <tr key={product.productId}>
+                            <td style={{ border: "1px solid black", padding: "5px" }}>{product.name}</td>
+                            <td style={{ border: "1px solid black", padding: "5px" }}>₹{product.price}</td>
+                            <td style={{ border: "1px solid black", padding: "5px" }}>{product.quantity}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+
+            <h3 style={{ textAlign: "right", marginTop: "20px" }}>Total: ₹{selectedOrder.amount}</h3>
+        </div>
+    );
+});
+
+export default Invoice;

@@ -1,0 +1,151 @@
+/* Main Container */
+.delivery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    min-height: 100vh;
+  }
+  
+  /* Heading */
+  .heading {
+    font-size: 2.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .heading .highlight {
+    background: #ff7800;
+    color: #fff;
+    padding: 0.2rem 4rem;
+    border-radius: 5px;
+  }
+  
+  /* Form Container */
+  .form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Input Fields */
+  .form-input {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.8rem 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  /* Submit Button */
+  .btn-submit {
+    width: 100%;
+    padding: 1rem;
+    background: #ff7800;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 1rem;
+  }
+  
+  .btn-submit:hover {
+    background: #e66b00;
+  }
+  
+  /* Table Container */
+  .table-container {
+    margin-top: 2rem;
+    width: 80%;
+  }
+  
+  .table-heading {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* Styled Table */
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .styled-table th, 
+  .styled-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .styled-table th {
+    background: #ff7800;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .styled-table tr:hover {
+    background: #f1f1f1;
+  }
+  
+  .no-data {
+    text-align: center;
+    font-weight: bold;
+    color: #777;
+  }
+  
+  /* Edit & Delete Buttons */
+  .btn-edit, .btn-delete {
+    padding: 0.5rem 1rem;
+    margin: 0 0.3rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .btn-edit {
+    background: #28a745;
+    color: white;
+  }
+  
+  .btn-edit:hover {
+    background: #218838;
+  }
+  
+  .btn-delete {
+    background: #dc3545;
+    color: white;
+  }
+  
+  .btn-delete:hover {
+    background: #c82333;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .heading {
+      font-size: 2.2rem;
+    }
+  
+    .form-container {
+      max-width: 90%;
+    }
+  
+    .table-container {
+      width: 95%;
+    }
+  }
+  
